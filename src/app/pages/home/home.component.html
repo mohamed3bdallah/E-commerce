@@ -1,0 +1,166 @@
+<main class="capitalize">
+  <section class="home">
+    <div
+      class="grid grid-cols-2 md:grid-cols-2 gap-2 overflow-hidden mx-auto px-2 pb-2 pt-16 h-[100vh]"
+    >
+      <div class="L-baner rounded-xl overflow-hidden h-[100%]">
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide>
+            <div class="h-screen relative">
+              <div class="absolute top-96 left-0 w-full h-full flex-col flex">
+                <h1
+                  class="text-white text-wrap text-3xl font-bold px-10 py-0 w-full font-[playfair] "
+                >
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
+                  quod, voluptates, quae, quia, doloremque quibusdam voluptatum
+                  doloribus quos quidem nemo.
+                </h1>
+                <button
+                  class="bg-black text-white p-3 rounded-xl mt-10 w-[50%] mx-auto font-[poppins]"
+                >
+                  shop now
+                </button>
+              </div>
+
+              <img
+                class="w-full  h-screen object-cover rounded-xl"
+                alt="poster-1"
+                src="/images/poster-2.jpg"
+              />
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="relative">
+              <img
+                class="w-full h-screen object-cover rounded-xl relative"
+                alt="poster-1"
+                src="/images/poster-1.jpg"
+              />
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+      <div
+        class="R-baner flex flex-col h-[100%] rounded-xl overflow-hidden gap-y-2"
+      >
+        <div class="h-[50%] bg-gray-100 rounded-xl p-5">
+          <h1 class="font-[playfair] text-[40px] font-bold mb-3">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non,
+            voluptatibus?
+          </h1>
+          <p class="text-[18px] font-light font-[playfair]">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum,
+            quidem eligendi, enim facilis provident non vel consequuntur veritatis
+            explicabo sequi nisi laborum ad maiores nulla, deserunt hic quos.
+          </p>
+          <button class="bg-black rounded-xl text-white p-3 my-3">
+            shop now
+          </button>
+        </div>
+        <div class="h-[50%] rounded-xl overflow-hidden flex gap-x-2">
+          <div
+            class="image w-[50%] rounded-xl overflow-hidden bg-[url('/images/winter.jpg')] bg-cover bg-center flex flex-col-reverse"
+          >
+
+            <h1 class="text-white font-[playfair] text-4xl py-12 px-5">
+              winter collection
+            </h1>
+          </div>
+          <div
+            class="image w-[50%] rounded-xl overflow-hidden flex items-center justify-center flex-col gap-y-2"
+          >
+            <div class="h-[50%] flex items-center justify-center rounded-xl overflow-hidden w-full bg-gray-200 bg-[url('/images/men.jpeg')] bg-cover bg-no-repeat">
+              <h2 class="font-[playfair] text-7xl">
+                For Him
+              </h2>
+            </div>
+            <div class="h-[50%] rounded-xl overflow-hidden flex items-center justify-center w-full bg-gray-200 bg-[url('/images/women.jpg')] bg-cover  bg-no-repeat">
+              <h2 class="font-[playfair] text-7xl">
+               For Her
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bestseller text-center mx-auto px-12 mt-16">
+    <h2 class="text-[40px]  font-bold mb-3 font-[playfair]">best seller</h2>
+    <div
+      class="grid grid-cols-[70%_30%] mx-auto py-8 "
+    >
+  <div class="grid grid-cols-3 gap-4 mx-2 bestProduct overflow-hidden ">
+    @for (prod of products.slice(0 , 6); track $index) {
+      <div class="item rounded-xl p-1 bg-gray-100 ">
+        <div class="image rounded-t-xl  overflow-hidden">
+          <img class="w-full h-[300px] object-contain" [src]="prod.imageCover" alt="">
+        </div>
+        <div class="content text-start p-4 rounded-b-xl">
+          <h3 class="text-xl font-bold font-[poppins]">{{prod.title.split(" ",2).join(" ")}}</h3>
+          <p class="text-gray-500 font-light font-[poppins]">{{prod.description}}</p>
+          <button class="bg-black text-white p-2 rounded-xl mt-2 font-[poppins] ">buy now</button>
+        </div>
+      </div>
+
+    }
+
+
+  </div>
+  <div class="offers overflow-hidden rounded-xl h-[99%] my-auto mx-2   ">
+  <div class=" h-full rounded-xl">
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide>
+        <div class="h-screen relative">
+          <div class="absolute top-96 left-0 w-full h-full flex-col flex">
+            <h1
+              class="text-white text-wrap text-3xl font-bold px-10 py-0 w-full font-[playfair] "
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
+              quod, voluptates, quae, quia, doloremque quibusdam voluptatum
+              doloribus quos quidem nemo.
+            </h1>
+            <button
+              class="bg-black text-white p-3 rounded-xl mt-10 w-[50%] mx-auto font-[poppins]"
+            >
+              shop now
+            </button>
+          </div>
+
+          <img
+            class="w-full h-screen object-cover rounded-xl"
+            alt="poster-1"
+            src="/images/poster-2.jpg"
+          />
+        </div>
+      </ng-template>
+      <ng-template carouselSlide>
+        <div class="relative">
+          <img
+            class="w-full h-screen object-cover rounded-xl relative"
+            alt="poster-1"
+            src="/images/poster-1.jpg"
+          />
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+
+  </div>
+    </div>
+  </section>
+  <section class="categories text-center mx-auto px-12 mt-16">
+    <h2 class="text-[40px]  font-bold mb-3 font-[playfair]">categories</h2>
+    <owl-carousel-o [options]="categoriesO">
+      @for (cat of categories; track $index) {
+        <ng-template carouselSlide>
+          <div>
+            <!-- <img [src]="cat.image" class="w-full" alt=""> -->
+            <h3 class=" p-10 ml-5 rounded-xl bg-gray-100 text-2xl font-bold font-[playfair]">{{cat.name.split(" ",1).join(" ")}}</h3>
+          </div>
+        </ng-template>
+      }
+
+    </owl-carousel-o>
+  </section>
+</main>
+
