@@ -1,22 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FlowbiteService } from '../../core/services/flowbite.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { AuthService } from '../../core/services/Auth/auth.service';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink,RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrls: ['./navbar.component.scss'] // Corrected property name
 })
 export class NavbarComponent {
 
-scrollNavbar() {
-  window.scrollTo(0, 0);
-  console.log('Navbar scrolled');
-
-}
-
- constructor(private flowbiteService: FlowbiteService) {}
+  private readonly flowbiteService = inject(FlowbiteService);
+  readonly authService = inject(AuthService);
 
   ngOnInit(): void {
     this.flowbiteService.loadFlowbite(flowbite => {

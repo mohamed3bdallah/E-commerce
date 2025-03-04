@@ -1,1 +1,49 @@
-<p>checkout works!</p>
+<section class="container capitalize p-4 mx-auto w-[75%] rounded-xl bg-slate-100 text-center mt-20">
+  <h1 class="text-center text-3xl mb-3 font-semibold">Checkout</h1>
+  <form  [formGroup]="checkForm" class="bg-slate-100 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700" (ngSubmit)="onSubmit()">
+    <div class="mb-6">
+      <label
+        for="details"
+        class="block mb-2 text-2xl text-left font-medium text-gray-900 dark:text-white"
+        >details</label
+      >
+      <textarea
+        formControlName="details"
+        type="password"
+        id="default-input"
+        class="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      ></textarea>
+    </div>
+    <div>
+      <div class="mb-6">
+        <label
+          for="phone"
+          class="block mb-2 text-2xl text-left font-medium text-gray-900 dark:text-white"
+          >phone</label
+        >
+        <input
+          formControlName="phone"
+          type="tel"
+          id="phone"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+      </div>
+    </div>
+    <div>
+      <div class="mb-6">
+        <label
+          for="city"
+          class="block mb-2 text-2xl text-left font-medium text-gray-900 dark:text-white"
+          >city</label
+        >
+        <input
+          formControlName="city"
+          type="text"
+          id="city"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+      </div>
+    </div>
+    <button (click)="onSubmit()" type="submit" [disabled]="checkForm.invalid" class="bg-black disabled:bg-slate-500  text-white p-3 rounded-xl mt-10 w-[50%] mx-auto font-[poppins]">payment</button>
+  </form>
+</section>

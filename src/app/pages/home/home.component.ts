@@ -4,6 +4,8 @@ import { ProductsService } from '../../core/services/products/products.service';
 import { IProduct } from '../../shared/interfaces/iproduct';
 import { CategoriesService } from '../../core/services/categories/categories.service';
 import { ICategory } from '../../shared/interfaces/icaregory';
+
+
 @Component({
   selector: 'app-home',
   imports: [CarouselModule],
@@ -54,6 +56,8 @@ export class HomeComponent implements OnInit {
       },
     }
   };
+
+
 
   private readonly productsService = inject(ProductsService);
   private readonly categoriesService = inject(CategoriesService);
