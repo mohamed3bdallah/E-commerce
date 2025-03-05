@@ -4,12 +4,16 @@ import { ProductsService } from '../../core/services/products/products.service';
 import { IProduct } from '../../shared/interfaces/iproduct';
 import { CategoriesService } from '../../core/services/categories/categories.service';
 import { ICategory } from '../../shared/interfaces/icaregory';
+import { RouterLink } from '@angular/router';
+import { CartService } from '../../core/services/cart/cart.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
   selector: 'app-home',
-  imports: [CarouselModule],
-  templateUrl: './home.component.html',
+  imports: [CarouselModule , RouterLink],
+
+templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
@@ -61,6 +65,8 @@ export class HomeComponent implements OnInit {
 
   private readonly productsService = inject(ProductsService);
   private readonly categoriesService = inject(CategoriesService);
+   private readonly CartService = inject(CartService);
+   private readonly toaster = inject(ToastrService);
   products: IProduct[] = [];
   categories: ICategory[] = [];
   getCategories() {
@@ -79,6 +85,17 @@ export class HomeComponent implements OnInit {
       next: (res) => {
         this.products = res.data;
         console.log(this.products);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
+  addCart(id: string) {
+    this.CartService.addToCart(id).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.toaster.success('Product added to cart successfully');
       },
       error: (err) => {
         console.log(err);

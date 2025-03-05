@@ -1,3 +1,27 @@
 .owltext{
   background-image:radial-gradient(circle, #00000000, #0000005f, #12121229);
 }
+.winter{
+  cursor: pointer;
+transition: all 1s ease-in-out;
+
+  h1{
+    background-image: linear-gradient( #00000000, #ffffff11, #000000);
+    transition: all .5s ease-in-out;
+  }
+
+}
+.winter:hover{
+
+  h1{
+    background-image: linear-gradient( #00000000, #ffffff11, #ffffff);
+    color: #000;
+  }
+}
+.him{
+  cursor: pointer;
+
+  h2{
+    background-image:radial-gradient(circle, #00000000, #000000, #12121229);
+  }
+}

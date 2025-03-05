@@ -71,12 +71,14 @@
             shop now
           </button>
         </div>
-        <div class="h-[50%] rounded-xl overflow-hidden flex gap-x-2">
+        <div class=" h-[50%] rounded-xl overflow-hidden flex gap-x-2">
 
             <div
-            class="image w-[50%] rounded-xl overflow-hidden bg-[url('/images/winter.jpg')] bg-cover bg-center flex flex-col-reverse"
+            routerLink="/product"
+            class=" winter
+            image w-[50%] rounded-xl overflow-hidden bg-[url('/images/winter.jpg')] bg-cover bg-center flex flex-col-reverse"
           >
-            <h1 class="text-white font-[playfair] text-4xl py-12 px-5">
+            <h1 class="text-white font-[playfair] text-4xl py-12 px-5 h-full flex flex-col-reverse" >
               winter collection
             </h1>
           </div>
@@ -88,12 +90,12 @@
             <div
               class="h-[50%] flex items-center justify-center rounded-xl overflow-hidden w-full bg-gray-200 bg-[url('/images/men.jpeg')] bg-cover bg-no-repeat"
             >
-              <h2 class="font-[playfair] text-7xl">For Him</h2>
+              <h2 routerLink="/product"  class="  him font-[playfair] text-7xl h-full flex justify-center items-center ">For Him</h2>
             </div>
             <div
               class="h-[50%] rounded-xl overflow-hidden flex items-center justify-center w-full bg-gray-200 bg-[url('/images/women.jpg')] bg-cover bg-no-repeat"
             >
-              <h2 class="font-[playfair] text-7xl">For Her</h2>
+              <h2 routerLink="/product" class=" him font-[playfair] text-7xl">For Her</h2>
             </div>
           </div>
         </div>
@@ -119,72 +121,134 @@
     </owl-carousel-o>
   </section>
   <section class="bestseller text-center mx-auto px-12 mt-16">
-    <h2 class="text-[40px] font-bold mb-3 font-[playfair]">best seller</h2>
-    <div class="grid grid-cols-[70%_30%] mx-auto py-8">
-      <div class="grid grid-cols-3 gap-4 mx-2 bestProduct overflow-hidden">
-        @for (prod of products.slice(0 , 6); track $index) {
-        <div class="item rounded-xl p-1 bg-gray-100">
-          <div class="image rounded-t-xl overflow-hidden">
-            <img
-              class="w-full h-[300px] object-contain"
-              [src]="prod.imageCover"
-              alt=""
-            />
-          </div>
-          <div class="content text-start p-4 rounded-b-xl">
-            <h3 class="text-xl font-bold font-[poppins]">
-              {{ prod.title.split(" ", 2).join(" ") }}
-            </h3>
-            <p class="text-gray-500 font-light font-[poppins]">
-              {{ prod.description }}
-            </p>
-            <button
-              class="bg-black text-white p-2 rounded-xl mt-2 font-[poppins]"
-            >
-              buy now
-            </button>
-          </div>
-        </div>
 
-        }
-      </div>
-      <div class="offers overflow-hidden rounded-xl h-[99%] my-auto mx-2">
-        <div class="h-full rounded-xl">
+    <div class="flex flex-col mx-auto py-8">
+
+      <div class="offers overflow-hidden rounded-xl h-[50%] my-auto mx-2 mb-16">
+        <div class="h-[50%] rounded-xl">
           <owl-carousel-o [options]="customOptions">
             <ng-template carouselSlide>
-              <div class="h-screen relative">
-                <div class="absolute top-96 left-0 w-full h-full flex-col flex">
-                  <h1
-                    class="text-white text-wrap text-3xl font-bold px-10 py-0 w-full font-[playfair]"
-                  >
-                    Where Elegance Meets Modern Glamour. Discover fashion that
-                    embodies sophistication and timeless style.
-                  </h1>
-                  <button
-                    class="bg-black text-white p-3 rounded-xl mt-10 w-[50%] mx-auto font-[poppins]"
-                  >
-                    shop now
-                  </button>
-                </div>
-
+              <div>
                 <img
-                  class="w-full h-screen object-cover rounded-xl"
+                  class="w-full h-full object-cover rounded-xl"
                   alt="poster-1"
-                  src="/images/poster-2.jpg"
+                  src="/images/img2.avif"
                 />
               </div>
             </ng-template>
             <ng-template carouselSlide>
-              <div class="relative">
+              <div>
                 <img
-                  class="w-full h-screen object-cover rounded-xl relative"
+                  class="w-full h-full object-cover rounded-xl"
                   alt="poster-1"
-                  src="/images/poster-1.jpg"
+                  src="/images/img4.avif"
                 />
               </div>
             </ng-template>
           </owl-carousel-o>
         </div>
+      </div>
+      <h2 class="text-[40px] font-bold mb-3 font-[playfair]">best seller</h2>
+      <div class="grid grid-cols-3 gap-2 mx-2 bestProduct overflow-hidden">
+        @for (pro of products.slice(0 , 6); track $index) {
+          <div
+          class="max-w-md bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+        >
+          <div [routerLink]="['/details' , pro.id]" class="w-full cursor-pointer">
+            <img
+              class="p-8 rounded-t-lg"
+              [src]="pro.imageCover"
+              alt="product image"
+            />
+
+            <div class="px-5 pb-5">
+              <h5
+                class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
+              >
+                {{ pro.title.split(" ", 2).join(" ") }}
+              </h5>
+
+              <div class="flex items-center mt-2.5 mb-5">
+                <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                  <svg
+                    class="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path
+                      d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path
+                      d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path
+                      d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path
+                      d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-4 h-4 text-gray-200 dark:text-gray-600"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path
+                      d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                    />
+                  </svg>
+                </div>
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3"
+                  >5.0</span
+                >
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-3xl font-bold text-gray-900 dark:text-white"
+                  >${{ pro.price }}</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="mx-auto px-2 block">
+            <button
+            (click)="addCart(pro.id)"
+              class=" w-full mb-2 text-white bg-gray-800 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+
+        }
       </div>
     </div>
   </section>
