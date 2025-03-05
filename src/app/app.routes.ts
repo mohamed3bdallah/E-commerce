@@ -11,7 +11,8 @@ export const routes: Routes = [
 
   {
     path: '',
-    component: AuthLayoutComponent,canActivate:[loginGuard],
+    component: AuthLayoutComponent,
+    canActivate: [loginGuard],
     children: [
       {
         path: 'login',
@@ -37,9 +38,10 @@ export const routes: Routes = [
 
   {
     path: '',
-    component: BlankLayoutComponent,canActivate: [authGuard],
+    component: BlankLayoutComponent,
+    canActivate: [authGuard],
     children: [
-      { path: 'home', component: HomeComponent, },
+      { path: 'home', component: HomeComponent },
       {
         path: 'product',
         loadComponent: () =>
@@ -87,7 +89,6 @@ export const routes: Routes = [
             (m) => m.DetailsComponent
           ),
       },
-
     ],
   },
 
