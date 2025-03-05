@@ -67,8 +67,10 @@ export class RegisterComponent {
           this.msErr = err.error.message;
         },
       });
-    }
+    }else{
+      this.registerForm.markAllAsTouched();
   }
+}
 
   confirmPassword(group: AbstractControl) {
     const password = group.get('password')?.value;
