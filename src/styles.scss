@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900');
-@import 'src/styles.scss';
+@use 'ngx-toastr/toastr';
+@use 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel' as owlCarousel;
+@use 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default' as owlTheme;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@use 'ngx-toastr/toastr';
-@use 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
-@use 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
-
-
