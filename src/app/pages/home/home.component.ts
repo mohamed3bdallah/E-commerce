@@ -15,7 +15,7 @@ import { ICategory } from '../../shared/interfaces/icaregory';
 export class HomeComponent implements OnInit {
   customOptions: OwlOptions = {
     loop: true,
-    autoplay: false,
+    autoplay: true,
     autoplayTimeout: 4000,
     autoplaySpeed: 1800,
     autoplayMouseleaveTimeout: 1000,

@@ -9,7 +9,7 @@
             <div class="h-screen relative">
               <div class="absolute top-96 left-0 w-full h-full flex-col flex">
                 <h1
-                  class="text-white text-wrap text-3xl font-bold px-10 py-0 w-full font-[playfair]"
+                  class="text-white text-wrap text-3xl font-bold px-10 py-0 w-full font-[playfair] owltext"
                 >
                   Where Elegance Meets Modern Glamour. Discover fashion that
                   embodies sophistication and timeless style.
@@ -29,9 +29,22 @@
             </div>
           </ng-template>
           <ng-template carouselSlide>
-            <div class="relative">
+            <div class="h-screen relative">
+              <div class="absolute top-96 left-0 w-full h-full flex-col flex">
+                <h1
+                  class="text-white text-wrap text-3xl font-bold px-10 py-0 w-full font-[playfair] owltext"
+                >
+                  Where Elegance Meets Modern Glamour. Discover fashion that
+                  embodies sophistication and timeless style.
+                </h1>
+                <button
+                  class="bg-black text-white p-3 rounded-xl mt-10 w-[50%] mx-auto font-[poppins]"
+                >
+                  shop now
+                </button>
+              </div>
               <img
-                class="w-full h-screen object-cover rounded-xl relative"
+                class="w-full h-screen object-cover rounded-xl "
                 alt="poster-1"
                 src="/images/poster-1.jpg"
               />
@@ -59,13 +72,16 @@
           </button>
         </div>
         <div class="h-[50%] rounded-xl overflow-hidden flex gap-x-2">
-          <div
+
+            <div
             class="image w-[50%] rounded-xl overflow-hidden bg-[url('/images/winter.jpg')] bg-cover bg-center flex flex-col-reverse"
           >
             <h1 class="text-white font-[playfair] text-4xl py-12 px-5">
               winter collection
             </h1>
           </div>
+
+
           <div
             class="image w-[50%] rounded-xl overflow-hidden flex items-center justify-center flex-col gap-y-2"
           >
