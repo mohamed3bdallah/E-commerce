@@ -7,6 +7,7 @@ import { ICategory } from '../../shared/interfaces/icaregory';
 import { RouterLink } from '@angular/router';
 import { CartService } from '../../core/services/cart/cart.service';
 import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -61,12 +62,11 @@ export class HomeComponent implements OnInit {
     }
   };
 
-
-
   private readonly productsService = inject(ProductsService);
   private readonly categoriesService = inject(CategoriesService);
-   private readonly CartService = inject(CartService);
-   private readonly toaster = inject(ToastrService);
+  private readonly CartService = inject(CartService);
+  private readonly toaster = inject(ToastrService);
+  private readonly ngxSpinnerService =inject(NgxSpinnerService)
   products: IProduct[] = [];
   categories: ICategory[] = [];
   getCategories() {
@@ -81,13 +81,16 @@ export class HomeComponent implements OnInit {
     });
   }
   getProducts() {
+    this.ngxSpinnerService.show('loading');
     this.productsService.getProducts().subscribe({
       next: (res) => {
         this.products = res.data;
+        this.ngxSpinnerService.hide('loading');
         console.log(this.products);
       },
       error: (err) => {
         console.log(err);
+        this.ngxSpinnerService.hide('loading');
       },
     });
   }
@@ -96,6 +99,7 @@ export class HomeComponent implements OnInit {
       next: (res) => {
         console.log(res);
         this.toaster.success('Product added to cart successfully');
+        this.CartService.cartCount.next(res.numOfCartItems);
       },
       error: (err) => {
         console.log(err);

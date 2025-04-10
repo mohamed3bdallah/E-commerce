@@ -32,10 +32,12 @@ export class ProductsComponent {
       next: (res) => {
         console.log(res);
         this.toaster.success('Product added to cart successfully');
+        this.cartService.cartCount.next(res.numOfCartItems);
       },
       error: (err) => {
         console.log(err);
       },
+
     });
   }
   ngOnInit() {

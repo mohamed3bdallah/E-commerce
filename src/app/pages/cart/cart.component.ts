@@ -30,6 +30,7 @@ export class CartComponent implements OnInit {
       next: (res) => {
         console.log(res);
         this.getCart();
+        this.cartService.cartCount.next(res.numOfCartItems);
       },
       error: (err) => {
         console.log(err);
@@ -52,6 +53,7 @@ export class CartComponent implements OnInit {
       next: (res) => {
         console.log(res);
         this.getCart();
+        this.cartService.cartCount.next(0);
       },
       error: (err) => {
         console.log(err);
