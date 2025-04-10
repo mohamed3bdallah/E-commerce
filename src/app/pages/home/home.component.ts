@@ -8,11 +8,12 @@ import { RouterLink } from '@angular/router';
 import { CartService } from '../../core/services/cart/cart.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { SearchPipe } from '../../shared/pipes/search.pipe';
 
 
 @Component({
   selector: 'app-home',
-  imports: [CarouselModule , RouterLink],
+  imports: [CarouselModule , RouterLink,SearchPipe ],
 
 templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -69,6 +70,8 @@ export class HomeComponent implements OnInit {
   private readonly ngxSpinnerService =inject(NgxSpinnerService)
   products: IProduct[] = [];
   categories: ICategory[] = [];
+  name: string = '';
+  active:string ='';
   getCategories() {
     this.categoriesService.getCategories().subscribe({
       next: (res) => {
@@ -99,13 +102,20 @@ export class HomeComponent implements OnInit {
       next: (res) => {
         console.log(res);
         this.toaster.success('Product added to cart successfully');
-        this.CartService.cartCount.next(res.numOfCartItems);
+        this.CartService.cartCount.set(res.numOfCartItems);
       },
       error: (err) => {
         console.log(err);
       },
     });
   }
+  onclick(name: string) {
+    this.name=name;
+    this.putActive(name);
+  }
+putActive(name:string){
+  this.active=name;
+}
   ngOnInit(): void {
     this.getProducts();
     this.getCategories();

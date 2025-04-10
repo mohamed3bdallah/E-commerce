@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { FlowbiteService } from '../../core/services/flowbite.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../core/services/Auth/auth.service';
@@ -15,20 +15,16 @@ export class NavbarComponent {
   readonly authService = inject(AuthService);
   private readonly cartService = inject(CartService);
   isLogin = input(true);
-cartCount=0
+cartCount= computed(()=> this.cartService.cartCount());
   ngOnInit(): void {
     this.flowbiteService.loadFlowbite((flowbite) => {
       // Your custom code here
       console.log('Flowbite loaded', flowbite);
     });
-   this.cartService.cartCount.subscribe({
-    next:(data)=>{
-      this.cartCount=data
-    }
-   })
+
    this.cartService.getLoged().subscribe({
     next: (res) => {
-      this.cartCount = res.numOfCartItems;
+      this.cartService.cartCount.set(res.numOfCartItems);
     },
     error: (err) => {
       console.log(err);

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal, WritableSignal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -8,7 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class CartService {
   constructor(private httpClient: HttpClient) {}
   myToken: any = localStorage.getItem('token');
-  cartCount: BehaviorSubject<number>  = new BehaviorSubject(0);
+  cartCount: WritableSignal<number>=signal(0);
   addToCart(id: string): Observable<any> {
     return this.httpClient.post(
       'https://ecommerce.routemisr.com/api/v1/cart',

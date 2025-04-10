@@ -22,6 +22,15 @@ transition: all 1s ease-in-out;
   cursor: pointer;
 
   h2{
-    background-image:radial-gradient(circle, #00000000, #000000, #12121229);
+    background-image:radial-gradient(circle, #ff000000, #000000, #12121229);
   }
+}
+
+.active{
+  background-color: #6e6e6e;
+
+
+    color: #ffffff;
+
+
 }
