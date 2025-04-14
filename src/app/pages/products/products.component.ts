@@ -5,10 +5,11 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CartService } from '../../core/services/cart/cart.service';
 import { ToastrService } from 'ngx-toastr';
 import { SearchPipe } from '../../shared/pipes/search.pipe';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-products',
-  imports: [RouterLink , SearchPipe,],
+  imports: [RouterLink , SearchPipe,FormsModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',
 })
@@ -22,7 +23,6 @@ name: string="" ;
     this.productsService.getProducts().subscribe({
       next: (res) => {
         this.products = res.data;
-        console.log(this.products);
       },
       error: (err) => {
         console.log(err);
@@ -47,5 +47,6 @@ name: string="" ;
   }
   ngOnInit() {
     this.getProducts();
+    console.log(this.name);
   }
 }

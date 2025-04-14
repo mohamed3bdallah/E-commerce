@@ -1,6 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import {
-  AbstractControl,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
@@ -8,16 +7,21 @@ import {
 } from '@angular/forms';
 import { AuthService } from '../../core/services/Auth/auth.service';
 import { Router, RouterLink } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule , RouterLink],
+  imports: [ReactiveFormsModule , RouterLink ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
   private readonly authService = inject(AuthService);
-
+  private readonly ngxService = inject(NgxSpinnerService);
   private readonly router = inject(Router);
   msErr: string = '';
   isSuccess: boolean = false;
@@ -39,6 +43,7 @@ export class LoginComponent {
         next: (res) => {
           console.log(res);
 
+
           if (res.message === 'success') {
             this.isLoading = false;
             this.loginForm.reset();
@@ -59,7 +64,9 @@ export class LoginComponent {
         },
       });
     }
+
   }
+OnInit(): void {
+  this.ngxService.hide();
 
-
-}
+}}

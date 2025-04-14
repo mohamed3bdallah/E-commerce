@@ -6,8 +6,8 @@
       <div class="L-baner rounded-xl overflow-hidden h-[100%] hidden lg:block">
         <owl-carousel-o [options]="customOptions">
           <ng-template carouselSlide>
-            <div class="h-screen relative">
-              <div class="absolute top-96 left-0 w-full h-full flex-col flex">
+            <div class="h-auto relative">
+              <div class="absolute  top-[55%] left-0 w-full h-full  flex-col flex bg-gradient-to-t from-black to-transparent">
                 <h1
                   class="text-white text-wrap text-3xl font-bold px-10 py-0 w-full font-[playfair] owltext"
                 >
@@ -15,7 +15,8 @@
                   embodies sophistication and timeless style.
                 </h1>
                 <button
-                  class="bg-black text-white p-3 rounded-xl mt-10 w-[50%] mx-auto font-[poppins]"
+                routerLink="/product"
+                  class="bg-[#090820] text-white p-3 rounded-xl mt-10 w-[50%] mx-auto font-[poppins] hover:bg-[#1d1968] transition-all duration-300"
                 >
                   shop now
                 </button>
@@ -29,8 +30,8 @@
             </div>
           </ng-template>
           <ng-template carouselSlide>
-            <div class="h-screen relative">
-              <div class="absolute top-96 left-0 w-full h-full flex-col flex">
+            <div class="h-auto relative">
+              <div class="absolute top-[55%] left-0 w-full h-full flex-col flex bg-gradient-to-t from-black to-transparent">
                 <h1
                   class="text-white text-wrap text-3xl font-bold px-10 py-0 w-full font-[playfair] owltext"
                 >
@@ -38,13 +39,14 @@
                   embodies sophistication and timeless style.
                 </h1>
                 <button
-                  class="bg-black text-white p-3 rounded-xl mt-10 w-[50%] mx-auto font-[poppins]"
+                routerLink="/product"
+                  class="bg-[#090820] text-white p-3 rounded-xl mt-10 w-[50%] mx-auto font-[poppins] hover:bg-[#1d1968] transition-all duration-300"
                 >
                   shop now
                 </button>
               </div>
               <img
-                class="w-full h-screen object-cover rounded-xl "
+                class="w-full h-screen object-cover rounded-xl"
                 alt="poster-1"
                 src="/images/poster-1.jpg"
               />
@@ -57,32 +59,28 @@
       >
         <div class="h-[50%] bg-gray-100 rounded-xl p-5">
           <h1
-            class="font-[playfair] text-[1rem] sm:text-[1.5rem] md:text-[2rem] font-bold mb-3"
+            class="font-[playfair] text-[1rem] sm:text-[1.5rem] md:text-[2.5rem] font-bold mb-3 fontcolor"
           >
             Timeless Elegance, Redefined. Embrace sophistication with fashion
             that speaks of grace and luxury.
           </h1>
-          <p class="text-[1rem] font-light font-[playfair]">
+          <p class="text-[1.5rem] font-light font-[playfair] lg:text-[1.2rem]">
             Discover exquisite fashion pieces crafted for the modern
             sophisticate. Elevate your style with our exclusive collection of
             luxury apparel.
           </p>
-          <button class="bg-black rounded-xl text-white p-3 my-3">
-            shop now
-          </button>
         </div>
-        <div class=" h-[50%] rounded-xl overflow-hidden flex gap-x-2">
-
-            <div
+        <div class="h-[50%] rounded-xl overflow-hidden flex gap-x-2">
+          <div
             routerLink="/product"
-            class=" winter
-            image w-[50%] rounded-xl overflow-hidden bg-[url('/images/winter.jpg')] bg-cover bg-center flex flex-col-reverse"
+            class="winter image w-[50%] rounded-xl overflow-hidden bg-[url('/images/winter.jpg')] bg-cover bg-center flex flex-col"
           >
-            <h1 class="text-white font-[playfair] text-4xl py-12 px-5 h-full flex flex-col-reverse" >
+            <h1
+              class="text-white font-[playfair] text-4xl py-12 px-5 h-full flex flex-col-reverse"
+            >
               winter collection
             </h1>
           </div>
-
 
           <div
             class="image w-[50%] rounded-xl overflow-hidden flex items-center justify-center flex-col gap-y-2"
@@ -90,24 +88,74 @@
             <div
               class="h-[50%] flex items-center justify-center rounded-xl overflow-hidden w-full bg-gray-200 bg-[url('/images/men.jpeg')] bg-cover bg-no-repeat"
             >
-              <h2 routerLink="/product"  class="  him font-[playfair] text-7xl h-full flex justify-center items-center ">For Him</h2>
+              <h2
+                routerLink="/product"
+                class="him font-[playfair] text-7xl h-full flex justify-center items-center text-[#090820]"
+              >
+                For Him
+              </h2>
             </div>
             <div
               class="h-[50%] rounded-xl overflow-hidden flex items-center justify-center w-full bg-gray-200 bg-[url('/images/women.jpg')] bg-cover bg-no-repeat"
             >
-              <h2 routerLink="/product" class=" him font-[playfair] text-7xl">For Her</h2>
+              <h2 routerLink="/product" class="him font-[playfair] text-7xl text-[#090820]">
+                For Her
+              </h2>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <section class="offers my-16">
+    <div class="h-auto self-center">
+      <div>
+        <h1 class="text-[3rem] font-bold text-center font-[playfair] my-10 text-[#090820]">
+          our offers
+        </h1>
+      </div>
 
-  <section class="bestseller text-center mx-auto px-12 mt-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mx-12">
+        <div
+          routerLink="/product"
+          class=" h-[300px] md:h-[600px] text-center overflow-hidden rounded-2xl w-full bg-[url('/images/ad1.jpg')] bg-cover bg-center"
+        >
+          <h1
+            class="text-white  md: font-semibold font-[poppins] text-4xl mb-12 px-5 h-full flex flex-col justify-center items-center bg-black bg-opacity-40 cursor-pointer hover:bg-opacity-60 transition-all duration-250 hover:text-[3rem] "
+          >
+            20% off on all products
+          </h1>
+        </div>
 
+        <div class="h-[600px] grid grid-flow-2 gap-2">
+          <div
+            routerLink="/product"
+            class="overflow-hidden rounded-2xl bg-[url('/images/ad3.png')] bg-cover"
+          >
+            <h1
+              class="text-white font-semibold font-[poppins] text-4xl mb-12 px-5 h-full flex flex-col justify-center items-center bg-black bg-opacity-40 cursor-pointer hover:bg-opacity-60 transition-all duration-250 hover:text-[3rem]"
+            >
+              30% off on all products
+            </h1>
+          </div>
+          <div
+            routerLink="/product"
+            class="overflow-hidden rounded-2xl bg-[url('/images/ad4.png')] bg-cover bg-center"
+          >
+            <h1
+              class="text-white font-semibold font-[poppins] text-4xl mb-12 px-5 h-full flex flex-col justify-center items-center bg-black bg-opacity-40 cursor-pointer hover:bg-opacity-60 transition-all duration-300 hover:text-[3rem]"
+            >
+              25% off on all products
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bestseller text-center mx-auto px-12">
     <div class="flex flex-col mx-auto py-8">
-
-      <div class="offers overflow-hidden rounded-xl h-[50%] my-auto mx-2 mb-16">
+      <div class="offer overflow-hidden rounded-xl h-[50%] mx-2 mb-16">
         <div class="h-[50%] rounded-xl">
           <owl-carousel-o [options]="customOptions">
             <ng-template carouselSlide>
@@ -131,14 +179,50 @@
           </owl-carousel-o>
         </div>
       </div>
-      <h2 class="text-[40px] font-bold mb-10 font-[playfair]">best seller</h2>
-      <div class="grid grid-cols-5 gap-2 mx-2 bestProduct overflow-hidden">
-
+      <h2 class="text-[40px] font-bold mb-10 font-[playfair] text-[#090820]">best seller</h2>
+      <div
+        class="bg-gradient-to-r from-blue-50 via-slate-200 to-blue-50  w-3/4 mx-auto flex justify-center items-center rounded-xl px-5 py-2 mb-6"
+      >
+        <ul class="flex flex-wrap justify-center items-center gap-2">
+          <li
+            class="bg-white inline text-blue-950 rounded-xl px-4 py-2 m-1 cursor-pointer"
+            [class.active]="active === ''"
+            (click)="onclick('')"
+          >
+            All
+          </li>
+          <li
+            class="bg-white inline text-blue-950 rounded-xl px-4 py-2 m-1 cursor-pointer"
+            [class.active]="active === 'crew'"
+            (click)="onclick('men')"
+          >
+            Men
+          </li>
+          <li
+            class="bg-white inline text-blue-950 rounded-xl px-4 py-2 m-1 cursor-pointer"
+            [class.active]="active === 'Woman'"
+            (click)="onclick('Woman')"
+          >
+            Women
+          </li>
+          <li
+            class="bg-white inline text-blue-950 rounded-xl px-4 py-2 m-1 cursor-pointer"
+            [class.active]="active === 'shoes'"
+            (click)="onclick('shoes')"
+          >
+            Shoes
+          </li>
+        </ul>
+      </div>
+      <div class="grid grid-cols-2 gap-2 mx-2 bestProduct overflow-hidden md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         @for (pro of (products|search:name).slice(0,10); track $index) {
-          <div
+        <div
           class="max-w-md bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
         >
-          <div [routerLink]="['/details' , pro.id]" class="w-full cursor-pointer">
+          <div
+            [routerLink]="['/details', pro.id]"
+            class="w-full cursor-pointer"
+          >
             <img
               class="p-8 rounded-t-lg object-contain"
               [src]="pro.imageCover"
@@ -224,8 +308,8 @@
           </div>
           <div class="mx-auto px-2 block">
             <button
-            (click)="addCart(pro.id)"
-              class=" w-full mb-2 text-white bg-gray-800 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              (click)="addCart(pro.id)"
+              class="w-full mb-2 text-white bg-[#1d1968]  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Add to cart
             </button>
@@ -237,17 +321,108 @@
     </div>
   </section>
 
-<section class="categories text-center mx-auto px-12 mt-16">
+  <section class="reviews text-center mx-auto px-12 my-16">
+    <h2 class="text-[40px] font-bold mb-10 font-[playfair] text-[#090820]">users review</h2>
+
+    <div class="rounded-xl overflow-hidden cursor-pointer h-full p-20 bg-gradient-to-r from-indigo-500 via-purple-700 to-pink-500">
+      <owl-carousel-o [options]="categoriesO">
+        @for (review of reviews; track $index) {
+        <ng-template carouselSlide>
+          <div
+            class="flex items-center flex-col justify-center w-3/4 mx-auto bg-slate-100 bg-opacity-25 rounded-xl p-10"
+          >
+            <div
+              class="image w-32 h-32 rounded-full overflow-hidden bg-gray-200"
+            >
+              <img
+                class="object-cover w-full h-full"
+                [src]="review.img"
+                alt=""
+              />
+            </div>
+            <h3 class="m-10 font-[poppins] text-2xl font-semibold text-white">
+              {{ review.name }}
+            </h3>
+            <p class="text-center font-[poppins] px-5 text-white">
+              {{ review.review }}
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non
+              inventore corrupti ex delectus quisquam quod?
+            </p>
+
+            <div class="flex items-center mt-6">
+              <svg
+                class="w-4 h-4 text-yellow-300 ms-1"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                />
+              </svg>
+              <svg
+                class="w-4 h-4 text-yellow-300 ms-1"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                />
+              </svg>
+              <svg
+                class="w-4 h-4 text-yellow-300 ms-1"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                />
+              </svg>
+              <svg
+                class="w-4 h-4 text-yellow-300 ms-1"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                />
+              </svg>
+              <svg
+                class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                />
+              </svg>
+            </div>
+          </div>
+        </ng-template>
+        }
+      </owl-carousel-o>
+    </div>
+  </section>
+  <!-- <section class="categories text-center mx-auto px-12 mt-16">
     <h2 class="text-[40px] font-bold mb-3 font-[playfair]">categories</h2>
     <owl-carousel-o [options]="categoriesO">
       @for (cat of categories; track $index) {
       <ng-template carouselSlide>
         <div class="relative ml-3 rounded-xl overflow-hidden cursor-pointer">
-          <div class="h-[150px]"> <img src="images/bg.jpg" alt=""></div>
+          <div class="h-[150px]"><img src="images/bg.jpg" alt="" /></div>
 
           <h3
             class="text-center pt-14 ml-5 rounded-xl text-3xl font-bold font-[playfair] absolute top-0 -left-5 text-white"
-            style="background: rgba(59, 59, 59, 0.5); width:100%; height: 100%;"
+            style="background: rgba(59, 59, 59, 0.5); width: 100%; height: 100%"
           >
             {{ cat.name.split(" ", 1).join(" ") }}
           </h3>
@@ -255,6 +430,5 @@
       </ng-template>
       }
     </owl-carousel-o>
-  </section>
+  </section> -->
 </main>
-

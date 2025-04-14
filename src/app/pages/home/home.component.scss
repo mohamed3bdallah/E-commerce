@@ -1,6 +1,4 @@
-.owltext{
-  background-image:radial-gradient(circle, #00000000, #0000005f, #12121229);
-}
+
 .winter{
   cursor: pointer;
 transition: all 1s ease-in-out;
@@ -27,10 +25,16 @@ transition: all 1s ease-in-out;
 }
 
 .active{
-  background-color: #6e6e6e;
+  background-color: #1d1968;
 
 
     color: #ffffff;
 
 
 }
+.fontcolor{
+background-image: linear-gradient(to right , #101092,#9416cf , #e6235e );
+color: transparent;
+background-clip: text;
+}
+

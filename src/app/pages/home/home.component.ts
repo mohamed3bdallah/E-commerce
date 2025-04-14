@@ -9,13 +9,13 @@ import { CartService } from '../../core/services/cart/cart.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { SearchPipe } from '../../shared/pipes/search.pipe';
-
+import { Reviews } from '../../shared/interfaces/reviews';
 
 @Component({
   selector: 'app-home',
-  imports: [CarouselModule , RouterLink,SearchPipe ],
+  imports: [CarouselModule, RouterLink, SearchPipe],
 
-templateUrl: './home.component.html',
+  templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
     autoplayTimeout: 4000,
     autoplaySpeed: 1800,
     autoplayMouseleaveTimeout: 1000,
-    autoplayHoverPause: true,
+    autoplayHoverPause: false,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
@@ -52,26 +52,48 @@ export class HomeComponent implements OnInit {
     nav: false,
     responsive: {
       0: {
-        items: 2,
+        items: 1,
       },
       600: {
-        items: 3,
+        items: 1,
       },
       1000: {
-        items: 6,
+        items: 1,
       },
-    }
+    },
   };
 
   private readonly productsService = inject(ProductsService);
   private readonly categoriesService = inject(CategoriesService);
   private readonly CartService = inject(CartService);
   private readonly toaster = inject(ToastrService);
-  private readonly ngxSpinnerService =inject(NgxSpinnerService)
+  private readonly ngxSpinnerService = inject(NgxSpinnerService);
   products: IProduct[] = [];
   categories: ICategory[] = [];
   name: string = '';
-  active:string ='';
+  active: string = '';
+
+  reviews: Reviews[] = [
+    {
+      name: 'John Doe',
+      img: 'images/face1.jpeg',
+      review:
+        ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.',
+    },
+    {
+      name: 'Jane Smith',
+      img: 'images/face2.jpeg',
+      review:
+        ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.',
+    },
+    {
+      name: 'Alice Johnson',
+      img: 'images/face3.jpeg',
+      review:
+        ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.',
+    },
+  ];
+
   getCategories() {
     this.categoriesService.getCategories().subscribe({
       next: (res) => {
@@ -84,7 +106,7 @@ export class HomeComponent implements OnInit {
     });
   }
   getProducts() {
-    this.ngxSpinnerService.show('loading');
+
     this.productsService.getProducts().subscribe({
       next: (res) => {
         this.products = res.data;
@@ -93,7 +115,7 @@ export class HomeComponent implements OnInit {
       },
       error: (err) => {
         console.log(err);
-        this.ngxSpinnerService.hide('loading');
+
       },
     });
   }
@@ -110,12 +132,12 @@ export class HomeComponent implements OnInit {
     });
   }
   onclick(name: string) {
-    this.name=name;
+    this.name = name;
     this.putActive(name);
   }
-putActive(name:string){
-  this.active=name;
-}
+  putActive(name: string) {
+    this.active = name;
+  }
   ngOnInit(): void {
     this.getProducts();
     this.getCategories();

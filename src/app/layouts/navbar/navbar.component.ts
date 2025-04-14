@@ -3,6 +3,7 @@ import { FlowbiteService } from '../../core/services/flowbite.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../core/services/Auth/auth.service';
 import { CartService } from '../../core/services/cart/cart.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-navbar',
@@ -14,6 +15,7 @@ export class NavbarComponent {
   private readonly flowbiteService = inject(FlowbiteService);
   readonly authService = inject(AuthService);
   private readonly cartService = inject(CartService);
+  private readonly ngxService = inject(NgxSpinnerService);
   isLogin = input(true);
 cartCount= computed(()=> this.cartService.cartCount());
   ngOnInit(): void {
@@ -23,11 +25,15 @@ cartCount= computed(()=> this.cartService.cartCount());
     });
 
    this.cartService.getLoged().subscribe({
+
     next: (res) => {
       this.cartService.cartCount.set(res.numOfCartItems);
+
     },
     error: (err) => {
       console.log(err);
+
+
     },
 
   });

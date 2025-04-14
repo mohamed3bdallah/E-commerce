@@ -9,7 +9,7 @@
       class="flex items-center justify-center space-x-4 rtl:space-x-reverse"
     >
       <span
-        class="self-center mx-16 py-1 text-2xl font-semibold whitespace-nowrap dark:text-white"
+        class="self-center mx-16 py-1 text-2xl font-semibold whitespace-nowrap dark:text-white text-[#1d1968]"
         >Aristo</span
       >
     </a>
@@ -48,7 +48,7 @@
         <li>
           <a
             routerLink="/home"
-            routerLinkActive=" bg-gray-900 text-white"
+            routerLinkActive=" bg-[#1d1968] text-white"
             class="block py-2 px-3 text-gray-800 rounded-lg md:p-1"
             aria-current="page"
             >Home</a
@@ -57,7 +57,7 @@
         <li>
           <a
             routerLink="/product"
-            routerLinkActive="text-white bg-gray-900"
+            routerLinkActive="text-white bg-[#1d1968]"
             class="block py-2 px-3 text-gray-800 rounded-lg md:p-1"
             aria-current="page"
             >products</a
@@ -67,7 +67,7 @@
         <li>
           <a
             routerLink="/categories"
-            routerLinkActive=" bg-gray-900 text-white"
+            routerLinkActive=" bg-[#1d1968] text-white"
             class="block py-2 px-3 text-gray-800 rounded-lg md:p-1"
             aria-current="page"
             >categories</a
@@ -76,7 +76,7 @@
         <li>
           <a
             routerLink="/brands"
-            routerLinkActive=" bg-gray-900 text-white"
+            routerLinkActive=" bg-[#1d1968] text-white"
             class="block py-2 px-3 text-gray-800 rounded-lg md:p-1"
             aria-current="page"
             >brands</a
@@ -94,7 +94,7 @@
         <li>
           <a
             routerLink="/login"
-            class="block py-2 px-3 rounded-xl  bg-gray-900 text-white"
+            class="block py-2 px-3 rounded-xl bg-[#1d1968] text-white"
             aria-current="page"
             >login</a
           >
@@ -103,7 +103,7 @@
         <li>
           <a
             routerLink="/register"
-            class="block py-2 px-3 rounded-xl bg-gray-900 text-white"
+            class="block py-2 px-3 rounded-xl bg-[#1d1968] text-white"
             aria-current="page"
             >register</a
           >
@@ -113,7 +113,7 @@
             <li>
               <a
                 routerLink="/cart"
-                class="block py-2 px-3 text-gray-800 rounded-sm relative  "
+                class="block py-2 px-3 text-[#1d1968] rounded-sm relative  "
                 aria-current="page"
                 ><i class="fas fa-cart-shopping text-xl"></i>
                 @if (cartCount()>0) {
@@ -125,7 +125,7 @@
           <li>
             <a
               (click)="authService.logOut()"
-              class="block py-2 px-3 cursor-pointer bg-gray-900 text-white rounded-xl"
+              class="block py-2 px-3 cursor-pointer bg-[#1d1968] text-white rounded-xl"
               aria-current="page"
               >logout</a
             >

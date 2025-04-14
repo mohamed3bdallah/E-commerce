@@ -6,19 +6,17 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
-  imports: [CurrencyPipe , RouterLink],
+  imports: [CurrencyPipe, RouterLink],
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.scss'
+  styleUrl: './cart.component.scss',
 })
 export class CartComponent implements OnInit {
-
   private readonly cartService = inject(CartService);
-  cartProducts:ICart = {} as ICart;
-  getCart(){
+  cartProducts: ICart = {} as ICart;
+  getCart() {
     this.cartService.getLoged().subscribe({
       next: (res) => {
         this.cartProducts = res.data;
-        console.log(this.cartProducts);
       },
       error: (err) => {
         console.log(err);
@@ -60,8 +58,7 @@ export class CartComponent implements OnInit {
       },
     });
   }
-  ngOnInit():void {
+  ngOnInit(): void {
     this.getCart();
   }
-
 }
