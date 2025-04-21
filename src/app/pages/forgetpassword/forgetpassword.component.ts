@@ -42,7 +42,7 @@ export class ForgetpasswordComponent {
   }
   onsubmitCode():void{
    this.authService.setCode(this.verifyCode.value).subscribe({
-     next:(res)=>{
+     next:(res:any)=>{
        console.log(res);
        if(res.status === 'success'){
          this.step = 3;
@@ -57,7 +57,7 @@ export class ForgetpasswordComponent {
   }
   onsubmitReset():void{
    this.authService.resetPassword(this.resetPass.value).subscribe({
-     next:(res)=>{
+     next:(res:any)=>{
        console.log(res);
 
 

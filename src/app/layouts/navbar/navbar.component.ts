@@ -17,7 +17,19 @@ export class NavbarComponent {
   private readonly cartService = inject(CartService);
   private readonly ngxService = inject(NgxSpinnerService);
   isLogin = input(true);
+  myToken: any = localStorage.getItem('token');
+
+  isVisitor(){
+    if (this.myToken === null) {
+      return true;
+    }
+    return false;
+
+  }
+
+
 cartCount= computed(()=> this.cartService.cartCount());
+
   ngOnInit(): void {
     this.flowbiteService.loadFlowbite((flowbite) => {
       // Your custom code here

@@ -39,7 +39,7 @@ export const routes: Routes = [
   {
     path: '',
     component: BlankLayoutComponent,
-    // canActivate: [authGuard],
+    canActivate: [authGuard],
     children: [
       { path: 'home', component: HomeComponent },
       {
@@ -65,7 +65,7 @@ export const routes: Routes = [
       },
       {
         path: 'cart',
-        canActivate: [authGuard],
+        // canActivate: [authGuard],
         loadComponent: () =>
           import('./pages/cart/cart.component').then((m) => m.CartComponent),
       },
