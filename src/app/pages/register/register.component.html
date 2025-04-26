@@ -5,14 +5,14 @@
       <div class="mb-6">
         <label
           for="default-input"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          class="block mb-2 text-sm font-medium text-gray-900 "
           >name</label
         >
         <input
           formControlName="name"
           type="text"
           id="default-input"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
         />
       </div>
       @if (registerForm.get('name')?.errors &&
@@ -49,14 +49,14 @@
       <div class="mb-6">
         <label
           for="default-input"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          class="block mb-2 text-sm font-medium text-gray-900 "
           >email</label
         >
         <input
           formControlName="email"
           type="email"
           id="default-input"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
         />
       </div>
       @if (registerForm.get('email')?.errors &&
@@ -91,14 +91,14 @@
       <div class="mb-6">
         <label
           for="default-input"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          class="block mb-2 text-sm font-medium text-gray-900 "
           >password</label
         >
         <input
           formControlName="password"
           type="password"
           id="default-input"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
         />
       </div>
       @if (registerForm.get('password')?.errors &&
@@ -133,14 +133,14 @@
       <div class="mb-6">
         <label
           for="default-input"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          class="block mb-2 text-sm font-medium text-gray-900 "
           >rePassword</label
         >
         <input
           formControlName="rePassword"
           type="password"
           id="default-input"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
         />
 
         @if (registerForm.getError('notMatch') &&
@@ -198,14 +198,14 @@
       <div class="mb-6">
         <label
           for="default-input"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          class="block mb-2 text-sm font-medium text-gray-900 "
           >phone</label
         >
         <input
           formControlName="Phone"
           type="tel"
           id="default-input"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
         />
       </div>
       @if (registerForm.get('Phone')?.errors &&
@@ -240,7 +240,7 @@
       <button
         [disabled]="isLoading"
         type="submit"
-        class="bg-blue-800 rounded-lg px-16 py-2 text-white font-[poppins] mx-auto block"
+        class="bg-blue-800 hover:bg-blue-950 rounded-lg px-16 py-2 text-white font-[poppins] mx-auto block"
       >
         Sign up @if (isLoading ) {<span
           ><i class="fas fa-spin fa-spinner"></i></span

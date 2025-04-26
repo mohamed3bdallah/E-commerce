@@ -127,6 +127,7 @@ export class HomeComponent implements OnInit {
         this.CartService.cartCount.set(res.numOfCartItems);
       },
       error: (err) => {
+
         console.log(err);
       },
     });
@@ -138,8 +139,12 @@ export class HomeComponent implements OnInit {
   putActive(name: string) {
     this.active = name;
   }
+  removeDarkClass(): void {
+    document.documentElement.classList.remove('dark'); // Remove the 'dark' class
+  }
   ngOnInit(): void {
     this.getProducts();
     this.getCategories();
+    this.removeDarkClass();
   }
 }

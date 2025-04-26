@@ -11,7 +11,7 @@
 <div class="m-12 grid grid-cols-1 gap-6 px-5 py-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
   @for (pro of products|search:name; track $index) {
     <div
-      class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+      class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm "
     >
       <div [routerLink]="['/details' , pro.id]" class="w-full cursor-pointer">
         <img
@@ -86,12 +86,12 @@
               </svg>
             </div>
             <span
-              class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3"
+              class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm  ms-3"
               >5.0</span
             >
           </div>
           <div class="flex items-center justify-between">
-            <span class="text-3xl font-bold text-gray-900 dark:text-white"
+            <span class="text-3xl font-bold text-gray-900 "
               >${{ pro.price }}</span
             >
           </div>
@@ -100,7 +100,7 @@
       <div class="mx-auto px-2 block">
         <button
         (click)="addCart(pro.id)"
-          class=" w-full mb-2 text-white bg-[#1d1968] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          class=" w-full mb-2 text-white bg-[#1d1968] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
         >
           Add to cart
         </button>

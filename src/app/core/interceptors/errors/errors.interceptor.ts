@@ -8,7 +8,7 @@ export const errorsInterceptor: HttpInterceptorFn = (err, next) => {
   return next(err).pipe(
     catchError((err) => {
 console.log('interceptor errors', err.error.message);
-toastrService.error(err.error.message, 'FreshCart');
+toastrService.error('you have  to login first');
 return throwError(() => err);
 }))
 };
