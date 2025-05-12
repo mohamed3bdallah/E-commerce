@@ -55,16 +55,16 @@
         </owl-carousel-o>
       </div>
       <div
-        class="R-baner flex flex-col h-[100%] rounded-xl overflow-hidden gap-y-2"
+        class="R-baner flex flex-col h-[100%] rounded-xl overflow-hidden gap-y-2 md:gap-y-0"
       >
         <div class="h-[50%] bg-gray-100 rounded-xl p-5">
           <h1
-            class="font-[playfair] text-[1rem] sm:text-[1.5rem] md:text-[2.5rem] font-bold mb-3 fontcolor"
+            class="font-[playfair] text-[1.5rem] sm:text-[1.5rem] md:text-[2.5rem] font-bold mb-3 fontcolor"
           >
             Timeless Elegance, Redefined. Embrace sophistication with fashion
             that speaks of grace and luxury.
           </h1>
-          <p class="text-[1.5rem] font-light font-[playfair] lg:text-[1.2rem]">
+          <p class="text-[1rem] font-light font-[playfair] md:text-[1.5rem] lg:text-[1.2rem]">
             Discover exquisite fashion pieces crafted for the modern
             sophisticate. Elevate your style with our exclusive collection of
             luxury apparel.
@@ -76,7 +76,7 @@
             class="winter image w-[50%] rounded-xl overflow-hidden bg-[url('/images/winter.jpg')] bg-cover bg-center flex flex-col"
           >
             <h1
-              class="text-white font-[playfair] text-4xl py-12 px-5 h-full flex flex-col-reverse"
+              class="text-white font-[playfair] text-3xl py-12 px-5 h-full flex flex-col-reverse md:text-4xl"
             >
               winter collection
             </h1>
@@ -153,9 +153,9 @@
     </div>
   </section>
 
-  <section class="bestseller text-center mx-auto px-12">
+  <section class="bestseller text-center mx-auto md:px-2  ">
     <div class="flex flex-col mx-auto py-8">
-      <div class="offer overflow-hidden rounded-xl h-[50%] mx-2 mb-16">
+      <div class="offer overflow-hidden rounded-xl h-[50%] mx-2 mb-16 hidden md:block">
         <div class="h-[50%] rounded-xl">
           <owl-carousel-o [options]="customOptions">
             <ng-template carouselSlide>
@@ -181,32 +181,32 @@
       </div>
       <h2 class="text-[40px] font-bold mb-10 font-[playfair] text-[#090820]">best seller</h2>
       <div
-        class="bg-gradient-to-r from-blue-50 via-slate-200 to-blue-50  w-3/4 mx-auto flex justify-center items-center rounded-xl px-5 py-2 mb-6"
+        class="bg-gradient-to-r from-blue-50 via-slate-200 to-blue-50 mx-auto flex justify-center items-center rounded-xl w-full py-2 mb-6 md:w-3/4  "
       >
-        <ul class="flex flex-wrap justify-center items-center gap-2">
+        <ul class="flex  justify-center items-center md:gap-2">
           <li
-            class="bg-white inline text-blue-950 rounded-xl px-4 py-2 m-1 cursor-pointer"
+            class="bg-white inline text-blue-950 rounded-xl px-2 py-1 m-1 md:px-4 md:py-2 cursor-pointer"
             [class.active]="active === ''"
             (click)="onclick('')"
           >
             All
           </li>
           <li
-            class="bg-white inline text-blue-950 rounded-xl px-4 py-2 m-1 cursor-pointer"
-            [class.active]="active === 'crew'"
+            class="bg-white inline text-blue-950 rounded-xl px-2 py-1 m-1 md:px-4 md:py-2 cursor-pointer"
+            [class.active]="active === 'men'"
             (click)="onclick('men')"
           >
             Men
           </li>
           <li
-            class="bg-white inline text-blue-950 rounded-xl px-4 py-2 m-1 cursor-pointer"
+            class="bg-white inline text-blue-950 rounded-xl px-2 py-1 m-1 md:px-4 md:py-2 cursor-pointer"
             [class.active]="active === 'Woman'"
             (click)="onclick('Woman')"
           >
             Women
           </li>
           <li
-            class="bg-white inline text-blue-950 rounded-xl px-4 py-2 m-1 cursor-pointer"
+            class="bg-white inline text-blue-950 rounded-xl px-2 py-1 m-1 md:px-4 md:py-2 cursor-pointer"
             [class.active]="active === 'shoes'"
             (click)="onclick('shoes')"
           >
@@ -321,21 +321,21 @@
     </div>
   </section>
 
-  <section class="reviews text-center mx-auto px-12 my-16">
+  <section class="reviews text-center mx-auto md:px-12 ">
     <h2 class="text-[40px] font-bold mb-10 font-[playfair] text-[#090820]">users review</h2>
 
-    <div class="rounded-xl overflow-hidden cursor-pointer h-full p-20 bg-gradient-to-r from-indigo-500 via-purple-700 to-pink-500">
-      <owl-carousel-o [options]="categoriesO">
+    <div class="rounded-xl overflow-hidden cursor-pointer md:h-full p-20 bg-gradient-to-r from-indigo-500 via-purple-700 to-pink-500">
+      <owl-carousel-o [options]="categoriesOptions">
         @for (review of reviews; track $index) {
         <ng-template carouselSlide>
           <div
-            class="flex items-center flex-col justify-center w-3/4 mx-auto bg-slate-100 bg-opacity-25 rounded-xl p-10"
+            class="flex items-center flex-col justify-center w-full  mx-auto bg-slate-100 bg-opacity-25 rounded-xl p-10 md:w-3/4"
           >
             <div
-              class="image w-32 h-32 rounded-full overflow-hidden bg-gray-200"
+              class="image w-32 h-32  rounded-full overflow-hidden bg-gray-200"
             >
               <img
-                class="object-cover w-full h-full"
+                class="object-cover w-full h-full rounded-full"
                 [src]="review.img"
                 alt=""
               />
@@ -343,13 +343,13 @@
             <h3 class="m-10 font-[poppins] text-2xl font-semibold text-white">
               {{ review.name }}
             </h3>
-            <p class="text-center font-[poppins] px-5 text-white">
+            <p class="text-center font-[poppins]  text-white text-sm md:text-base h-1/2 ">
               {{ review.review }}
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non
               inventore corrupti ex delectus quisquam quod?
             </p>
 
-            <div class="flex items-center mt-6">
+            <div class="flex items-center mt-1 md:mt-10">
               <svg
                 class="w-4 h-4 text-yellow-300 ms-1"
                 aria-hidden="true"

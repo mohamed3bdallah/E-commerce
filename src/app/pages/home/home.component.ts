@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
     items: 1,
     nav: false,
   };
-  categoriesO: OwlOptions = {
+  categoriesOptions: OwlOptions = {
     loop: true,
     autoplay: true,
     autoplayTimeout: 4000,
@@ -46,8 +46,9 @@ export class HomeComponent implements OnInit {
     touchDrag: true,
     pullDrag: false,
     dots: false,
+    center: true,
 
-    autoWidth: true,
+
     items: 6,
     nav: false,
     responsive: {
